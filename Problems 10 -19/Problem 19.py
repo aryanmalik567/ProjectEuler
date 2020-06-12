@@ -1,19 +1,4 @@
-days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-
-months = {
-    "Jan": 31,
-    "Feb": 28,
-    "Mar": 31,
-    "Apr": 30,
-    "May": 31,
-    "Jun": 30,
-    "Jul": 31,
-    "Aug": 31,
-    "Sep": 30,
-    "Oct": 31,
-    "Nov": 30,
-    "Dec": 31
-}
+months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 def isLeap(year):
@@ -22,10 +7,38 @@ def isLeap(year):
             return True
         elif year % 100 == 0:
             return False
+        else:
+            return True
     else:
         return False
 
 
+sunCount = 0
+day = 2  # 01/01/1901 was a Tuesday
+dayCount = 1
+week = 7
+
+for year in range(1901, 2001):
+
+    if isLeap(year):
+        months[1] = 29
+    else:
+        months[1] = 28
+
+    for month in months:
+        dayCount = 1
+        while dayCount <= month:
+            if dayCount == 1 and day == 7:
+                sunCount += 1
+                dayCount += 1
+                day = 1
+            elif day == 7:
+                dayCount += 1
+                day = 1
+            else:
+                day += 1
+                dayCount += 1
 
 
+print(sunCount)
 
