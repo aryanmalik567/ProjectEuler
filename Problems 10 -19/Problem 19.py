@@ -15,7 +15,6 @@ def isLeap(year):
 
 sunCount = 0
 day = 2  # 01/01/1901 was a Tuesday
-dayCount = 1
 week = 7
 
 for year in range(1901, 2001):
