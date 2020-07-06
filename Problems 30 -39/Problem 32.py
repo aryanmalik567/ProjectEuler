@@ -7,7 +7,6 @@ def consecutiveNum(number):
 
     return output
 
-
 products = []
 
 for a in range(1, 100):
