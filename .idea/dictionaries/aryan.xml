@@ -8,6 +8,8 @@
       <w>isprime</w>
       <w>numer</w>
       <w>pandigital</w>
+      <w>truncatable</w>
+      <w>truncatables</w>
     </words>
   </dictionary>
 </component>
